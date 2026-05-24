@@ -13,3 +13,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* TV Friendly Focus styles */
+[data-tv-focusable] {
+  outline: none;
+  border: 2px solid transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-tv-focusable]:focus-visible,
+[data-tv-focusable]:focus {
+  outline: none;
+  border-color: #f97316;
+  background-color: rgba(249, 115, 22, 0.2) !important;
+  box-shadow: 0 0 25px #f97316;
+  transform: scale(1.15);
+}
+

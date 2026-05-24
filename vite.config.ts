@@ -10,7 +10,7 @@ import { nitro } from 'nitro/vite'
 export default defineConfig({
   plugins: [
     devtools(),
-    nitro(),
+    !process.env.VITEST && nitro(),
     viteReact(),
     tailwindcss(),
     {

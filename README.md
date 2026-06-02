@@ -14,6 +14,7 @@ A cozy, immersive fireplace simulation web app optimized for both desktop browse
 - **Improved Controls**:
   - **Mute Toggle**: Easily toggle sound with the speaker button. The icon updates immediately on click.
   - **Fullscreen Toggle**: Immerse yourself with full-screen mode utilizing the HTML5 Fullscreen API.
+  - **Resolution Toggle**: Switch quality between **720p** (default, projector-friendly) and **1080p** (high quality) using the resolution button at the bottom-left of the screen.
 - **Responsive Layout**: Designed to adjust perfectly to any screen size, from small smart devices to large Smart TVs.
 
 ## Getting Started
@@ -29,9 +30,10 @@ Open `http://localhost:3000` in your web browser or TV emulator.
 
 ## Usage
 
-- **Navigation**: Use remote control Arrow keys or keyboard arrow keys to move focus between the **Mute** button (top right) and the **Fullscreen** button (bottom right).
+- **Navigation**: Use remote control Arrow keys or keyboard arrow keys to move focus between the **Mute** button (top right), the **Fullscreen** button (bottom right), and the **Resolution** button (bottom left).
 - **Play/Pause**: Press `Space` or media controls on your remote (`Play`, `Pause`, `MediaPlayPause`) to pause or resume the fire.
 - **Select**: Use the remote's `Enter` key / `OK` button or the keyboard `Enter` / `Space` keys to activate the focused button.
+- **Resolution**: The video defaults to 720p (best for low-performance smart projectors). Click the Resolution button (bottom left) to switch to 1080p. The video state (mute/play) is preserved during the transition.
 
 ## Building for Production
 
@@ -56,7 +58,8 @@ npm run test
 fireplace/
 ├── public/
 │   └── video/
-│       └── fireplace.mp4      # Fireplace video (with audio track)
+│       ├── fireplace_720p.mp4 # Default optimized 720p video
+│       └── fireplace_1080p.mp4 # High-quality optimized 1080p video
 ├── src/
 │   ├── components/
 │   │   ├── VideoBackground.tsx  # Handles video element, streaming, media keys, mute state

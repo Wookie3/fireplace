@@ -26,5 +26,19 @@ describe('App', () => {
     // Check if the fullscreen button exists
     const fullscreenButton = screen.getByRole('button', { name: /enter fullscreen/i })
     expect(fullscreenButton).toBeDefined()
+
+    // Check if the resolution button exists and displays correct label
+    const resolutionButton = screen.getByRole('button', { name: /switch to 1080p/i })
+    expect(resolutionButton).toBeDefined()
+
+    // Click resolution button to toggle resolution state
+    fireEvent.click(resolutionButton)
+
+    // Trigger canplay again to simulate loading the new video resolution
+    if (videoElement) {
+      fireEvent(videoElement, new Event('canplay'))
+    }
+
+    expect(screen.getByRole('button', { name: /switch to 720p/i })).toBeDefined()
   })
 })
